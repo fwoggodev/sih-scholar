@@ -10,6 +10,7 @@ logging.basicConfig(level=logging.DEBUG,
                     ])
 from dotenv import load_dotenv
 load_dotenv()
+import os
 app=FastAPI()
 
 app.add_middleware(
@@ -27,3 +28,8 @@ def startup():
 def shutdown():
     logging.info("Application ended succesfully")
 app.include_router(url.router)
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
