@@ -7,3 +7,6 @@ langchain_groq==0.1.6
 langchain_google_genai==1.0.7
 python-dotenv==1.0.1
 langchain_core==0.2.22
+uvicorn==0.22.0
+requests==2.31.0
+sqlalchemy==2.0.21
